@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أشهر المدن الليبية - cities.ly | Popular Libyan Cities</title>
+  <meta name="description" content="اكتشف أشهر المدن الليبية: طرابلس، بنغازي، غدامس، سبها، البيضاء، مصراتة، درنة، طبرق، زوارة، نالوت. تاريخ ومعالم سياحية وفنادق ومطاعم.">
+  <meta name="keywords" content="مدن ليبيا، طرابلس، بنغازي، غدامس، سبها، البيضاء، مصراتة، سياحة ليبيا">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-compass"></i></div>
+        <span>cities.ly</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="home">الرئيسية</a></li>
+        <li><a href="cities.html" data-key="cities">المدن</a></li>
+        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+        <li><a href="transport.html" data-key="transport">النقل</a></li>
+        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-key="home">الرئيسية</a></li>
+      <li><a href="cities.html" data-key="cities">المدن</a></li>
+      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+      <li><a href="transport.html" data-key="transport">النقل</a></li>
+      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <section class="page-header" style="margin-top: 72px;">
+    <div class="page-header-bg">
+      <img src="images/tripoli.jpg" alt="Libyan Cities">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1 class="page-header-title" data-key="citiesTitle">أشهر المدن الليبية</h1>
+      <p class="page-header-desc" data-key="citiesDesc">اكتشف 12 مدينة ليبية رئيسية وتاريخها ومعالمها السياحية</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="index.html" data-key="home">الرئيسية</a>
+        <i class="fas fa-chevron-left" style="font-size: 0.7rem;"></i>
+        <span data-key="cities">المدن</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cities Grid -->
+  <section class="section">
+    <div class="container">
+      <!-- Search -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="ابحث عن مدينة..." data-key="searchPlaceholder">
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <!-- Tripoli -->
+        <div class="card" data-search="طرابلس tripoli">
+          <div class="card-img">
+            <img src="images/tripoli.jpg" alt="Tripoli">
+            <span class="card-badge">عاصمة</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">طرابلس</h3>
+            <p class="card-text">عاصمة ليبيا وأكبر مدنها، تأسست منذ القرن السابع قبل الميلاد. تضم المدينة القديمة وسراي الحمراء والأسواق التقليدية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 1.2 مليون نسمة</span>
+              <a href="tripoli.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benghazi -->
+        <div class="card" data-search="بنغازي benghazi">
+          <div class="card-img">
+            <img src="images/benghazi.jpg" alt="Benghazi">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">بنغازي</h3>
+            <p class="card-text">ثاني أكبر مدن ليبيا، عاصمة الشرق التاريخية. تأسست على يد اليونانيين عام 446 ق.م. تضم كورنيشاً خلاباً وشواطئ رائعة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 700 ألف نسمة</span>
+              <a href="benghazi.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ghadames -->
+        <div class="card" data-search="غدامس ghadames">
+          <div class="card-img">
+            <img src="images/ghadames.jpg" alt="Ghadames">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">غدامس</h3>
+            <p class="card-text">لؤلؤة الصحراء الليبية، مدينة الواحات القديمة المسجلة في مواقع التراث العالمي لليونسكو. تُعرف بعمارتها الطينية الفريدة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 12 ألف نسمة</span>
+              <a href="ghadames.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sabha -->
+        <div class="card" data-search="سبها sabha">
+          <div class="card-img">
+            <img src="images/sabha.jpg" alt="Sabha">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">سبها</h3>
+            <p class="card-text">عاصمة فزان وبوابة الصحراء الكبرى، مركز تجاري مهم. تقع على حافة الكثبان الرملية وتُعتبر نقطة انطلاق لرحلات الصحراء.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 200 ألف نسمة</span>
+              <a href="sabha.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bayda -->
+        <div class="card" data-search="البيضاء bayda">
+          <div class="card-img">
+            <img src="images/bayda.jpg" alt="Bayda">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">البيضاء</h3>
+            <p class="card-text">تقع في الجبل الأخضر، عاصمة البرقة سابقاً. تتميز بمناخها المعتدل وطبيعتها الخلابة. تضم آثار قورينا اليونانية القديمة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 250 ألف نسمة</span>
+              <a href="bayda.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Misrata -->
+        <div class="card" data-search="مصراتة misrata">
+          <div class="card-img">
+            <img src="images/misrata.jpg" alt="Misrata">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">مصراتة</h3>
+            <p class="card-text">ثالث أكبر مدن ليبيا، مركز تجاري وصناعي حيوي. تتميز بمينائها التجاري الكبير وشواطئها الجميلة على البحر المتوسط.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 500 ألف نسمة</span>
+              <a href="misrata.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derna -->
+        <div class="card" data-search="درنة derna">
+          <div class="card-img">
+            <img src="images/derna.jpg" alt="Derna">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">درنة</h3>
+            <p class="card-text">مدينة الساحل الشرقي الجميلة، تُعرف بمنتجعها السياحي وشاطئها الأزرق. تقع بين البحر والجبل وتتميز بطبيعة خلابة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 90 ألف نسمة</span>
+              <a href="derna.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tobruk -->
+        <div class="card" data-search="طبرق tobruk">
+          <div class="card-img">
+            <img src="images/tobruk.jpg" alt="Tobruk">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">طبرق</h3>
+            <p class="card-text">مدينة تاريخية على الساحل الشرقي، لعبت دوراً مهماً في الحرب العالمية الثانية. تضم مقبرة حربية ومتحفاً عسكرياً.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 110 ألف نسمة</span>
+              <a href="tobruk.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zuwara -->
+        <div class="card" data-search="زوارة zuwara">
+          <div class="card-img">
+            <img src="images/zuwara.jpg" alt="Zuwara">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">زوارة</h3>
+            <p class="card-text">مدينة ساحلية في أقصى الغرب الليبي، تُعرف بشواطئها البكر ومينائها التاريخي. مركز ثقافي أمازيغي مهم.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 55 ألف نسمة</span>
+              <a href="zuwara.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nalut -->
+        <div class="card" data-search="نالوت nalut">
+          <div class="card-img">
+            <img src="images/nalut.jpg" alt="Nalut">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">نالوت</h3>
+            <p class="card-text">تقع في الجبل الغربي، تضم قصر نالوت التاريخي وهو أكبر قصور البربر في ليبيا. طبيعة جبلية خلابة ومناخ معتدل.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 27 ألف نسمة</span>
+              <a href="nalut.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zliten -->
+        <div class="card" data-search="زليتن zliten">
+          <div class="card-img">
+            <img src="images/sabratha.jpg" alt="Zliten">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">زليتن</h3>
+            <p class="card-text">مدينة تاريخية على الساحل الغربي، تضم جامع أحمد باشا القره مانلي وجامعة الزيتونة وأسواقها الشعبية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 85 ألف نسمة</span>
+              <a href="zliten.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ghat -->
+        <div class="card" data-search="غات ghat">
+          <div class="card-img">
+            <img src="images/akakus.jpg" alt="Ghat">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">غات</h3>
+            <p class="card-text">مدينة واحة في أقصى جنوب غرب ليبيا، تقع عند سفح جبال أكاكوس. نقطة انطلاق لاكتشاف رسومات الكهوف القديمة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-users"></i> 15 ألف نسمة</span>
+              <a href="ghat.html" class="card-link">التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-compass"></i></div>
+            <span>cities.ly</span>
+          </a>
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-key="home">الرئيسية</a></li>
+            <li><a href="cities.html" data-key="cities">المدن</a></li>
+            <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+            <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="cities">المدن</h4>
+          <ul class="footer-links">
+            <li><a href="tripoli.html">طرابلس</a></li>
+            <li><a href="benghazi.html">بنغازي</a></li>
+            <li><a href="ghadames.html">غدامس</a></li>
+            <li><a href="sabha.html">سبها</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
+            <li><i class="fas fa-phone"></i> +218 21 123 4567</li>
+            <li><i class="fas fa-map-marker-alt"></i> طرابلس، ليبيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 cities.ly - <span data-key="rights">جميع الحقوق محفوظة</span></span>
+        <span>Libya Tourism Guide</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
