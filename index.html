@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cities.ly - دليل السياحة في ليبيا | Libya Tourism Guide</title>
+  <meta name="description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس وبنغازي وسبها وغدامس والمزيد.">
+  <meta name="keywords" content="ليبيا, سياحة, طرابلس, بنغازي, غدامس, لبدة, صبراتة, فنادق, معالم, مطاعم">
+  <meta property="og:title" content="cities.ly - دليل السياحة في ليبيا">
+  <meta property="og:description" content="اكتشف أجمل مدن ليبيا السياحية">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cities.ly">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar transparent">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-compass"></i></div>
+        <span>cities.ly</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="home">الرئيسية</a></li>
+        <li><a href="cities.html" data-key="cities">المدن</a></li>
+        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+        <li><a href="transport.html" data-key="transport">النقل</a></li>
+        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-key="home">الرئيسية</a></li>
+      <li><a href="cities.html" data-key="cities">المدن</a></li>
+      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+      <li><a href="transport.html" data-key="transport">النقل</a></li>
+      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero-leptis.jpg" alt="Roman ruins of Leptis Magna, Libya">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-map-marker-alt"></i>
+        <span data-key="heroBadge">دليل السياحة الليبي</span>
+      </div>
+      <h1 class="hero-title" data-key="heroTitle">اكتشف أجمل مدن ليبيا</h1>
+      <p class="hero-subtitle" data-key="heroSubtitle">دليلك الشامل لأبرز المدن والمعالم والفنادق والمطاعم في ليبيا. رحلة لا تُنسى بانتظارك.</p>
+      <a href="cities.html" class="hero-cta">
+        <span data-key="heroCta">استكشف الآن</span>
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div>
+    <a href="#cities" class="hero-scroll">
+      <i class="fas fa-chevron-down fa-2x"></i>
+    </a>
+  </section>
+
+  <!-- Popular Cities Section -->
+  <section class="section" id="cities">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-city"></i>
+          <span data-key="popularCities">أشهر المدن الليبية</span>
+        </div>
+        <h2 class="section-title" data-key="popularCities">أشهر المدن الليبية</h2>
+        <p class="section-desc" data-key="popularCitiesDesc">تعرف على أبرز المدن الليبية وما تقدمه من معالم سياحية وثقافية فريدة</p>
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <!-- Tripoli -->
+        <div class="card" data-search="طرابلس tripoli">
+          <div class="card-img">
+            <img src="images/tripoli.jpg" alt="Tripoli, Libya">
+            <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">طرابلس</h3>
+            <p class="card-text">عاصمة ليبيا وأكبر مدنها، تجمع بين التاريخ العريق والحضارة الحديثة. تضم المدينة القديمة وأسواقها التقليدية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الغربي</span>
+              <a href="tripoli.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benghazi -->
+        <div class="card" data-search="بنغازي benghazi">
+          <div class="card-img">
+            <img src="images/benghazi.jpg" alt="Benghazi, Libya">
+            <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">بنغازي</h3>
+            <p class="card-text">ثاني أكبر مدن ليبيا، مدينة الساحل الشرقي الجميلة بكورنيشها الخلاب وشواطئها الرائعة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الشرقي</span>
+              <a href="benghazi.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ghadames -->
+        <div class="card" data-search="غدامس ghadames">
+          <div class="card-img">
+            <img src="images/ghadames.jpg" alt="Ghadames, Libya">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">غدامس</h3>
+            <p class="card-text">لؤلؤة الصحراء، مدينة الواحات القديمة المسجلة في اليونسكو، تُعرف بعمارتها التقليدية الفريدة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الجنوب الغربي</span>
+              <a href="ghadames.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sabha -->
+        <div class="card" data-search="سبها sabha">
+          <div class="card-img">
+            <img src="images/sabha.jpg" alt="Sabha, Libya">
+            <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">سبها</h3>
+            <p class="card-text">عاصمة الجنوب الليبي وبوابة الصحراء الكبرى، تتميز بقربها من الكثبان الرملية والواحات.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> فزان</span>
+              <a href="sabha.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bayda -->
+        <div class="card" data-search="البيضاء bayda">
+          <div class="card-img">
+            <img src="images/bayda.jpg" alt="Bayda, Libya">
+            <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">البيضاء</h3>
+            <p class="card-text">تقع في الجبل الأخضر، تتميز بمناخها المعتدل وطبيعتها الخلابة وآثار قورينا التاريخية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الجبل الأخضر</span>
+              <a href="bayda.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Misrata -->
+        <div class="card" data-search="مصراتة misrata">
+          <div class="card-img">
+            <img src="images/misrata.jpg" alt="Misrata, Libya">
+            <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">مصراتة</h3>
+            <p class="card-text">إحدى أهم المدن الليبية، مركز تجاري حيوي على الساحل الغربي بشواطئها الجميلة ونمط حياة عصري.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الغربي</span>
+              <a href="misrata.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label" data-key="citiesCount">مدينة</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label" data-key="hotelsCount">فندق</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">30+</span>
+          <span class="stat-label" data-key="landmarksCount">معلم</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">40+</span>
+          <span class="stat-label" data-key="restaurantsCount">مطعم</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini Sections: Hotels, Landmarks, Restaurants -->
+  <section class="mini-section">
+    <div class="container">
+      <!-- Hotels Mini Section -->
+      <div class="mini-card" style="margin-bottom: 32px;">
+        <div class="mini-card-img">
+          <img src="images/hotel-luxury.jpg" alt="Luxury Hotel in Libya">
+        </div>
+        <div class="mini-card-body">
+          <h3 class="mini-card-title" data-key="hotelsSection">أفضل الفنادق</h3>
+          <p class="mini-card-text" data-key="hotelsDesc">اختر من مجموعة مختارة من أفضل الفنادق في ليبيا، من الفخامة الفندقية العالمية إلى الضيافة التقليدية الأصيلة.</p>
+          <a href="hotels.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Landmarks Mini Section -->
+      <div class="mini-card" style="margin-bottom: 32px;">
+        <div class="mini-card-body">
+          <h3 class="mini-card-title" data-key="landmarksSection">أبرز المعالم السياحية</h3>
+          <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل ليبيا وجهة فريدة.</p>
+          <a href="landmarks.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="mini-card-img">
+          <img src="images/sabratha.jpg" alt="Sabratha Roman Theatre">
+        </div>
+      </div>
+
+      <!-- Restaurants Mini Section -->
+      <div class="mini-card">
+        <div class="mini-card-img">
+          <img src="images/libyan-food.jpg" alt="Libyan Cuisine">
+        </div>
+        <div class="mini-card-body">
+          <h3 class="mini-card-title" data-key="restaurantsSection">أشهر المطاعم</h3>
+          <p class="mini-card-text" data-key="restaurantsDesc">تذوق ألذ الأطباق الليبية والعالمية في أرقى المطاعم على مستوى المدن الليبية الرئيسية.</p>
+          <a href="restaurants.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destination Inspiration - Horizontal Scroll -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-camera"></i>
+          <span data-key="inspiration">إلهام الوجهات</span>
+        </div>
+        <h2 class="section-title" data-key="inspiration">إلهام الوجهات</h2>
+        <p class="section-desc" data-key="inspirationDesc">صور من أجمل الأماكن في ليبيا</p>
+      </div>
+
+      <div class="scroll-section">
+        <div class="scroll-track">
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/hero-leptis.jpg" alt="Leptis Magna">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">لبدة الكبرى</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/ghadames-old.jpg" alt="Old Ghadames">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">غدامس القديمة</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/coastline.jpg" alt="Mediterranean Coast">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">شواطئ المتوسط</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/akakus.jpg" alt="Akakus Mountains">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">جبال أكاكوس</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/tripoli-old.jpg" alt="Tripoli Old City">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">مدينة طرابلس القديمة</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/derna.jpg" alt="Derna">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">درنة</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/zuwara.jpg" alt="Zuwara">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">زوارة</span>
+            </div>
+          </div>
+          <div class="scroll-card">
+            <div class="scroll-card-img">
+              <img src="images/nalut.jpg" alt="Nalut">
+            </div>
+            <div class="scroll-card-body">
+              <span class="scroll-card-title">نالوت</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-compass"></i></div>
+            <span>cities.ly</span>
+          </a>
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-key="home">الرئيسية</a></li>
+            <li><a href="cities.html" data-key="cities">المدن</a></li>
+            <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+            <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-key="cities">المدن</h4>
+          <ul class="footer-links">
+            <li><a href="tripoli.html">طرابلس</a></li>
+            <li><a href="benghazi.html">بنغازي</a></li>
+            <li><a href="ghadames.html">غدامس</a></li>
+            <li><a href="sabha.html">سبها</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
+            <li><i class="fas fa-phone"></i> +218 21 123 4567</li>
+            <li><i class="fas fa-map-marker-alt"></i> طرابلس، ليبيا</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 cities.ly - <span data-key="rights">جميع الحقوق محفوظة</span></span>
+        <span>Libya Tourism Guide</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
