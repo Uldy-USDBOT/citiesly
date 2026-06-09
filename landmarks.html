@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أبرز المعالم السياحية في ليبيا - cities.ly | Top Landmarks in Libya</title>
+  <meta name="description" content="اكتشف أهم المعالم السياحية في ليبيا. لبدة الكبرى، صبراتة، قورينا، جبال أكاكوس، غدامس القديمة، البحر المتوسط والمزيد.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="home">الرئيسية</a></li>
+        <li><a href="cities.html" data-key="cities">المدن</a></li>
+        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+        <li><a href="transport.html" data-key="transport">النقل</a></li>
+        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-key="home">الرئيسية</a></li>
+      <li><a href="cities.html" data-key="cities">المدن</a></li>
+      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+      <li><a href="transport.html" data-key="transport">النقل</a></li>
+      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+    </ul>
+  </div>
+
+  <section class="page-header" style="margin-top: 72px;">
+    <div class="page-header-bg"><img src="images/hero-leptis.jpg" alt="Landmarks"></div>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1 class="page-header-title" data-key="landmarksTitle">أبرز المعالم السياحية</h1>
+      <p class="page-header-desc" data-key="landmarksPageDesc">اكتشف أهم المواقع الأثرية والطبيعية في ليبيا</p>
+    </div>
+  </section>
+  <div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="index.html" data-key="home">الرئيسية</a><i class="fas fa-chevron-left" style="font-size: 0.7rem;"></i><span data-key="landmarks">المعالم</span></div></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="ابحث عن معلم سياحي..." data-key="searchPlaceholder">
+      </div>
+
+      <div class="card-grid">
+        <div class="card" data-search="لبدة الكبرى leptis magna الخمس">
+          <div class="card-img">
+            <img src="images/hero-leptis.jpg" alt="Leptis Magna">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">لبدة الكبرى</h3>
+            <p class="card-text">واحدة من أهم المدن الرومانية في أفريقيا، تقع بالقرب من الخمس. تضم قوس سبتيموس سيفيروس والمنتدى والمسرح والحمامات الرومانية. مسجلة في اليونسكو.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> الخمس (شرق طرابلس)</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="صبراتة sabratha">
+          <div class="card-img">
+            <img src="images/sabratha.jpg" alt="Sabratha">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">صبراتة</h3>
+            <p class="card-text">مدينة فينيقية رومانية أثرية على ساحل البحر المتوسط. يُعد مسرحها الروماني من الأكثر حفظاً في العالم. موقع تراث عالمي لليونسكو.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> صبراتة (غرب طرابلس)</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="قورينا cyrene شحات">
+          <div class="card-img">
+            <img src="images/bayda.jpg" alt="Cyrene">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">قورينا (شحات)</h3>
+            <p class="card-text">مدينة يونانية قديمة في الجبل الأخضر، تضم معبداً لأبولو ومسرحاً ومقابر منحوتة في الصخر. من أهم المواقع الأثرية في المتوسط.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> شحات (الجبل الأخضر)</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="جبال أكاكوس akakus">
+          <div class="card-img">
+            <img src="images/akakus.jpg" alt="Akakus">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">جبال أكاكوس</h3>
+            <p class="card-text">منطقة صحراوية في جنوب غرب ليبيا تضم آلاف الرسومات الصخرية القديمة التي تعود لـ 12,000 عام. مناظر طبيعية خلابة وكثبان رملية.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> فزان (الجنوب الغربي)</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="غدامس القديمة old ghadames">
+          <div class="card-img">
+            <img src="images/ghadames-old.jpg" alt="Old Ghadames">
+            <span class="card-badge gold">UNESCO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">مدينة غدامس القديمة</h3>
+            <p class="card-text">واحة تاريخية في الصحراء الليبية تضم مدينة طينية قديمة بشوارع مغطاة ومنازل متشابكة. أدرجتها اليونسكو كموقع تراث عالمي.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> غدامس (الجنوب الغربي)</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="البحر المتوسط mediterranean coast">
+          <div class="card-img"><img src="images/coastline.jpg" alt="Mediterranean"></div>
+          <div class="card-body">
+            <h3 class="card-title">شواطئ البحر المتوسط</h3>
+            <p class="card-text">يبلغ طول الساحل الليبي 1,770 كم من أجمل شواطئ المتوسط. مياه crystal-clear ورمال ذهبية وشواطئ بكر لم تُمسّ.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الليبي</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="سراي الحمراء red castle طرابلس">
+          <div class="card-img"><img src="images/museum-redcastle.jpg" alt="Red Castle"></div>
+          <div class="card-body">
+            <h3 class="card-title">سراي الحمراء (القلعة الحمراء)</h3>
+            <p class="card-text">قلعة تاريخية ضخمة في طرابلس بُنيت في القرن السابع عشر. تطل على الميناء وتضم متحفاً أثرياً هاماً.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> طرابلس</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="المدينة القديمة طرابلس old city">
+          <div class="card-img"><img src="images/tripoli-old.jpg" alt="Tripoli Old City"></div>
+          <div class="card-body">
+            <h3 class="card-title">المدينة القديمة (طرابلس)</h3>
+            <p class="card-text">قلب طرابلس التاريخي بأسواقه الضيقة ومساجده القديمة ومنازله العثمانية. يضم خانقاه سيدي عبد الوهاب ومسجد أحمد باشا.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> طرابلس</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="مقبرة طبرق tobruk war cemetery">
+          <div class="card-img"><img src="images/tobruk.jpg" alt="Tobruk Cemetery"></div>
+          <div class="card-body">
+            <h3 class="card-title">مقبرة طبرق الحربية</h3>
+            <p class="card-text">مقبرة عسكرية دولية تحتوي على قبور جنود من الحرب العالمية الثانية. موقع تاريخي هام يجذب الزوار المهتمين بالتاريخ.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> طبرق (الشرق)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-key="home">الرئيسية</a></li>
+            <li><a href="cities.html" data-key="cities">المدن</a></li>
+            <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+            <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="cities">المدن</h4>
+          <ul class="footer-links">
+            <li><a href="tripoli.html">طرابلس</a></li>
+            <li><a href="benghazi.html">بنغازي</a></li>
+            <li><a href="ghadames.html">غدامس</a></li>
+            <li><a href="sabha.html">سبها</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
+            <li><i class="fas fa-phone"></i> +218 21 123 4567</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 cities.ly - <span data-key="rights">جميع الحقوق محفوظة</span></span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
