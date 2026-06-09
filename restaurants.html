@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أشهر المطاعم الليبية - cities.ly | Famous Libyan Restaurants</title>
+  <meta name="description" content="دليل أفضل المطاعم في ليبيا. المطاعم الليبية التقليدية والعالمية في طرابلس وبنغازي ومصراتة والبيضاء. عناوين وأرقام هواتف.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="home">الرئيسية</a></li>
+        <li><a href="cities.html" data-key="cities">المدن</a></li>
+        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+        <li><a href="transport.html" data-key="transport">النقل</a></li>
+        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-key="home">الرئيسية</a></li>
+      <li><a href="cities.html" data-key="cities">المدن</a></li>
+      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+      <li><a href="transport.html" data-key="transport">النقل</a></li>
+      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+    </ul>
+  </div>
+
+  <section class="page-header" style="margin-top: 72px;">
+    <div class="page-header-bg"><img src="images/restaurant.jpg" alt="Restaurants"></div>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1 class="page-header-title" data-key="restaurantsTitle">أشهر المطاعم الليبية</h1>
+      <p class="page-header-desc" data-key="restaurantsPageDesc">دليلك لأفضل المطاعم والمأكولات في مختلف المدن الليبية</p>
+    </div>
+  </section>
+  <div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="index.html" data-key="home">الرئيسية</a><i class="fas fa-chevron-left" style="font-size: 0.7rem;"></i><span data-key="restaurants">المطاعم</span></div></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="ابحث عن مطعم..." data-key="searchPlaceholder">
+      </div>
+
+      <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-label"><i class="fas fa-utensils"></i><span>مطاعم طرابلس</span></div>
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <div class="card" data-search="الشريف طرابلس libyan traditional couscous">
+          <div class="card-img"><img src="images/libyan-food.jpg" alt="Al Sharif Restaurant"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم الشريف</h3>
+            <p class="card-text">أشهر مطعم ليبي تقليدي في طرابلس. يقدم الكسكسي الليبي والبازين والأطباق الشعبية الأصيلة في أجواء تقليدية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> شارع عمر المختار، طرابلس</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 21 333 4444 | <i class="fas fa-clock"></i> 12 م - 11 م</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="المائدة طرابلس modern cuisine">
+          <div class="card-img"><img src="images/restaurant.jpg" alt="Al Maeda"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم المائدة</h3>
+            <p class="card-text">مطعم عصري يقدم مأكولات ليبية معاصرة وعالمية. تصميم أنيق وأجواء راقية مناسبة للعائلات.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> سوق الجمعة، طرابلس</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 21 444 5555 | <i class="fas fa-clock"></i> 1 م - 12 ص</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="السراي طرابلس red castle">
+          <div class="card-img"><img src="images/museum-redcastle.jpg" alt="Saray Restaurant"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم السراي</h3>
+            <p class="card-text">مطعم فاخر بإطلالة رائعة على سراي الحمراء والميناء. يقدم مأكولات بحرية طازجة ومشويات.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> المدينة القديمة، طرابلس</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 21 555 6666 | <i class="fas fa-clock"></i> 12 م - 11 م</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin: 60px 0 40px;">
+        <div class="section-label"><i class="fas fa-utensils"></i><span>مطاعم بنغازي</span></div>
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <div class="card" data-search="كوزموبوليتان بنغازي seafood">
+          <div class="card-img"><img src="images/benghazi.jpg" alt="Cosmopolitan"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم كوزموبوليتان</h3>
+            <p class="card-text">مطعم عصري بإطلالة مباشرة على البحر. يقدم مأكولات بحرية طازجة وأطباقاً عالمية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> كورنيش بنغازي</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 61 222 3333 | <i class="fas fa-clock"></i> 12 م - 12 ص</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="الصياد بنغازي fish">
+          <div class="card-img"><img src="images/coastline.jpg" alt="Al Sayyad"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم الصياد</h3>
+            <p class="card-text">متخصص في الأطباق البحرية الطازجة. يشتهر بسمك القاروص والجمبري المشوي والحساء البحري.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> شارع 20 يناير، بنغازي</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 61 333 4444 | <i class="fas fa-clock"></i> 11 ص - 11 م</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="الأندلس بنغازي andalus">
+          <div class="card-img"><img src="images/restaurant.jpg" alt="Al Andalus"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم الأندلس</h3>
+            <p class="card-text">مطعم يقدم المأكولات الشرقية والأندلسية في أجواء أندلسية فاخرة. موسيقى حية وخدمة متميزة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> حي الصابري، بنغازي</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 61 444 5555 | <i class="fas fa-clock"></i> 1 م - 12 ص</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin: 60px 0 40px;">
+        <div class="section-label"><i class="fas fa-utensils"></i><span>مطاعم المدن الأخرى</span></div>
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <div class="card" data-search="باب البحر مصراتة">
+          <div class="card-img"><img src="images/misrata.jpg" alt="Bab Al Bahr Misrata"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم باب البحر - مصراتة</h3>
+            <p class="card-text">مطعم بحرية متميز يطل على البحر مباشرة. أطباق سمك طازجة ومشويات بإطلالة رائعة.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> كورنيش مصراتة</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 51 222 3333</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="الجبل البيضاء">
+          <div class="card-img"><img src="images/bayda.jpg" alt="Al Jabal"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم الجبل - البيضاء</h3>
+            <p class="card-text">مطعم تقليدي بإطلالة جبلية خلابة. يقدم الأطباق الجبلية والمأكولات الشعبية في أجواء طبيعية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> الجبل الأخضر، البيضاء</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 81 333 4444</p>
+          </div>
+        </div>
+
+        <div class="card" data-search="الواحة غدامس oasis">
+          <div class="card-img"><img src="images/ghadames.jpg" alt="Al Wahah"></div>
+          <div class="card-body">
+            <h3 class="card-title">مطعم الواحة - غدامس</h3>
+            <p class="card-text">أطباق صحراوية تقليدية بليبية أصيلة. تجربة تناول طعام فريدة في أجواء صحراوية.</p>
+            <div class="card-meta">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> المدينة الجديدة، غدامس</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dark-40);"><i class="fas fa-phone"></i> +218 41 555 6666</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-key="home">الرئيسية</a></li>
+            <li><a href="cities.html" data-key="cities">المدن</a></li>
+            <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+            <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="cities">المدن</h4>
+          <ul class="footer-links">
+            <li><a href="tripoli.html">طرابلس</a></li>
+            <li><a href="benghazi.html">بنغازي</a></li>
+            <li><a href="ghadames.html">غدامس</a></li>
+            <li><a href="sabha.html">سبها</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
+            <li><i class="fas fa-phone"></i> +218 21 123 4567</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 cities.ly - <span data-key="rights">جميع الحقوق محفوظة</span></span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
