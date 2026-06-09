@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أفضل الفنادق في ليبيا - cities.ly | Best Hotels in Libya</title>
+  <meta name="description" content="اكتشف أفضل الفنادق في ليبيا. فنادق 5 نجوم في طرابلس وبنغازي ومصراتة والبيضاء وغدامس. حجز وأسعار وتقييمات.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="home">الرئيسية</a></li>
+        <li><a href="cities.html" data-key="cities">المدن</a></li>
+        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+        <li><a href="transport.html" data-key="transport">النقل</a></li>
+        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-key="home">الرئيسية</a></li>
+      <li><a href="cities.html" data-key="cities">المدن</a></li>
+      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
+      <li><a href="transport.html" data-key="transport">النقل</a></li>
+      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
+    </ul>
+  </div>
+
+  <section class="page-header" style="margin-top: 72px;">
+    <div class="page-header-bg"><img src="images/hotel-luxury.jpg" alt="Hotels"></div>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1 class="page-header-title" data-key="hotelsTitle">أفضل الفنادق في ليبيا</h1>
+      <p class="page-header-desc" data-key="hotelsPageDesc">مجموعة مختارة من أفضل الفنادق والمنتجعات في مختلف المدن الليبية</p>
+    </div>
+  </section>
+  <div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="index.html" data-key="home">الرئيسية</a><i class="fas fa-chevron-left" style="font-size: 0.7rem;"></i><span data-key="hotels">الفنادق</span></div></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="ابحث عن فندق..." data-key="searchPlaceholder">
+      </div>
+
+      <div class="card-grid card-grid-3">
+        <div class="card" data-search="كورنثيا طرابلس corinthia">
+          <div class="card-img"><img src="images/hotel-luxury.jpg" alt="Corinthia"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق كورنثيا باب أفريقيا</h3>
+            <p class="card-text">فندق فاخر 5 نجوم يقع على كورنيش طرابلس. يضم مطاعم عالمية، سبا، وحمام سباحة بإطلالة بحرية خلابة.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="tripoli.html">طرابلس</a></span><span class="card-rating">$$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="المهاري طرابلس al mahary">
+          <div class="card-img"><img src="images/hotel-beach.jpg" alt="Al Mahary"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق المهاري</h3>
+            <p class="card-text">فندق تاريخي فاخر في قلب طرابلس. يتميز بأجوائه الأنيقة وخدماته المتميزة وموقعه الاستراتيجي.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="tripoli.html">طرابلس</a></span><span class="card-rating">$$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="باب البحر مصراتة bab al bahr">
+          <div class="card-img"><img src="images/hotel-beach.jpg" alt="Bab Al Bahr"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق باب البحر</h3>
+            <p class="card-text">فندق فاخر 5 نجوم في مصراتة على البحر المتوسط. إطلالة رائعة وخدمات عالمية المستوى.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="misrata.html">مصراتة</a></span><span class="card-rating">$$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="تيبستي بنغازي tebesti">
+          <div class="card-img"><img src="images/benghazi.jpg" alt="Tibesti"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق تيبستي بنغازي</h3>
+            <p class="card-text">أحد أعرق وأفخم فنادق شرق ليبيا، يقع على كورنيش بنغازي مباشرة بإطلالة بحرية ساحرة.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="benghazi.html">بنغازي</a></span><span class="card-rating">$$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="الجبل الأخضر البيضاء green mountain">
+          <div class="card-img"><img src="images/bayda.jpg" alt="Green Mountain"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق الجبل الأخضر</h3>
+            <p class="card-text">فندق 4 نجوم في البيضاء بإطلالة رائعة على الجبل الأخضر. مناخ معتدل وطبيعة خلابة.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="bayda.html">البيضاء</a></span><span class="card-rating">$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="غدامس الواحة ghadames">
+          <div class="card-img"><img src="images/ghadames.jpg" alt="Ghadames Hotel"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 3 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق غدامس</h3>
+            <p class="card-text">فندق بأجواء صحراوية أصيلة في قلب مدينة غدامس. تجربة إقامة فريدة بالقرب من المدينة القديمة.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="ghadames.html">غدامس</a></span><span class="card-rating">$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="الودان طرابلس wdan">
+          <div class="card-img"><img src="images/tripoli.jpg" alt="Wdan Hotel"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق الودان</h3>
+            <p class="card-text">فندق حديث 4 نجوم في طرابلس بموقع متميز وخدمات عصرية. مناسب للمسافرين بغرض الأعمال والسياحة.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="tripoli.html">طرابلس</a></span><span class="card-rating">$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="قصر بنغازي palace">
+          <div class="card-img"><img src="images/benghazi.jpg" alt="Palace Hotel"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق قصر بنغازي</h3>
+            <p class="card-text">فندق فاخر بإطلالة بحرية في قلب بنغازي. خدمات متميزة وموقع استراتيجي قريب من المعالم السياحية.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="benghazi.html">بنغازي</a></span><span class="card-rating">$$</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-search="الصحراء سبها sahara">
+          <div class="card-img"><img src="images/sabha.jpg" alt="Sahara Hotel"></div>
+          <div class="card-body">
+            <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 3 نجوم</div>
+            <h3 class="card-title" style="margin-top: 8px;">فندق الصحراء الكبرى</h3>
+            <p class="card-text">فندق حديث في قلب سبها. نقطة انطلاق مثالية لرحلات الصحراء والكثبان الرملية.</p>
+            <div class="card-meta"><span class="tag"><i class="fas fa-map-marker-alt"></i> <a href="sabha.html">سبها</a></span><span class="card-rating">$</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-compass"></i></div><span>cities.ly</span></a>
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-key="home">الرئيسية</a></li>
+            <li><a href="cities.html" data-key="cities">المدن</a></li>
+            <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
+            <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="cities">المدن</h4>
+          <ul class="footer-links">
+            <li><a href="tripoli.html">طرابلس</a></li>
+            <li><a href="benghazi.html">بنغازي</a></li>
+            <li><a href="ghadames.html">غدامس</a></li>
+            <li><a href="sabha.html">سبها</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
+            <li><i class="fas fa-phone"></i> +218 21 123 4567</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 cities.ly - <span data-key="rights">جميع الحقوق محفوظة</span></span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
