@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>معركة لبدة - Citiesly</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      .article-hero {
+        position: relative;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-500) 100%);
+        overflow: hidden;
+        margin-top: 70px;
+      }
+      .article-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="white" opacity="0.1"/></svg>');
+        opacity: 0.5;
+      }
+      .article-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 40px 24px;
+      }
+      .article-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 900;
+        margin-bottom: 16px;
+        letter-spacing: -1px;
+      }
+      .article-content {
+        padding: 60px 0;
+      }
+      .article-body {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: var(--dark-40);
+      }
+      .article-body h2 {
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .article-body p {
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--sage-600);
+        text-decoration: none;
+        margin-bottom: 40px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .back-link:hover {
+        color: var(--sage-700);
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar transparent">
+      <div class="navbar-inner">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">🏛️</div>
+          <span>Citiesly</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html" data-key="home">الرئيسية</a></li>
+          <li><a href="../cities.html" data-key="cities">المدن</a></li>
+          <li><a href="../hotels.html" data-key="hotels">الفنادق</a></li>
+          <li><a href="../landmarks.html" data-key="landmarks">المعالم</a></li>
+          <li><a href="../restaurants.html" data-key="restaurants">المطاعم</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN</button>
+          <button class="mobile-menu-btn">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="article-hero">
+      <div class="article-hero-content">
+        <h1>معركة لبدة الكبرى</h1>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <section class="article-content">
+      <div class="container">
+        <a href="../libya.html" class="back-link">
+          <i class="fas fa-arrow-right"></i>
+          العودة إلى المقالات
+        </a>
+        <div class="article-body">
+          <h2>نقطة تحول في التاريخ</h2>
+          <p>تعتبر معركة لبدة الكبرى نقطة تحول حاسمة في تاريخ الدولة الرومانية في أفريقيا. كانت هذه المعركة العسكرية من المعارك المصيرية التي دارت في مدينة لبدة القديمة الواقعة على الساحل الليبي، وأثرت بشكل عميق على مسار السيطرة الرومانية في المنطقة.</p>
+          
+          <h2>السياق التاريخي</h2>
+          <p>حدثت المعركة في فترة من الصراعات والنزاعات الداخلية التي شهدتها الإمبراطورية الرومانية. كانت لبدة الكبرى من أهم المدن التجارية الرومانية في شمال أفريقيا، مما جعلها ذات قيمة استراتيجية كبيرة في الحسابات العسكرية والسياسية للروم.</p>
+          
+          <h2>مجريات المعركة</h2>
+          <p>تحكي المصادر التاريخية أن المعركة شهدت احتشاداً كبيراً من القوات العسكرية، وكانت الخطط العسكرية الذكية والقيادة الحكيمة من العوامل الرئيسية في تحديد مصير الصراع. انتشر القتال في أرجاء المدينة والأراضي المحيطة بها.</p>
+          
+          <h2>الآثار والنتائج</h2>
+          <p>أسفرت المعركة عن نتائج عميقة الأثر على النظام الروماني في أفريقيا، وغيرت توازن السلطة والنفوذ في المنطقة. تركت المعركة آثاراً واضحة على البنية السكانية والعمرانية للمدينة، وأصبحت حدثاً محفوراً في الذاكرة التاريخية للشعب الليبي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo" style="color: white;">
+              <div class="logo-icon" style="background: var(--sage-400);">🏛️</div>
+              <span>Citiesly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><span data-key="rights">جميع الحقوق محفوظة</span> © 2026 Citiesly</p>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
