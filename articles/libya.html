@@ -3,50 +3,548 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>مقال عن ليبيا</title>
+    <title>مقالات عن ليبيا - Citiesly</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-      body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; line-height:1.7; margin:2rem; background:#fff; color:#111 }
-      header { border-bottom:1px solid #ddd; padding-bottom:1rem; margin-bottom:1rem }
-      h1 { color:#0b5394 }
-      h2 { color:#073763 }
-      .lead { font-size:1.15rem; color:#333 }
-      section { margin-bottom:1.25rem }
-      footer { border-top:1px solid #eee; padding-top:1rem; color:#666; font-size:0.9rem }
+      .articles-hero {
+        position: relative;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-500) 100%);
+        overflow: hidden;
+        margin-top: 70px;
+      }
+
+      .articles-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="white" opacity="0.1"/></svg>');
+        opacity: 0.5;
+      }
+
+      .articles-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 40px 24px;
+      }
+
+      .articles-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 900;
+        margin-bottom: 16px;
+        letter-spacing: -1px;
+      }
+
+      .articles-hero p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 32px;
+        padding: 80px 0;
+      }
+
+      .article-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-base);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .article-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-6px);
+      }
+
+      .article-img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--sage-200), var(--sage-300));
+      }
+
+      .article-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .article-card:hover .article-img img {
+        transform: scale(1.08);
+      }
+
+      .article-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: var(--sage-500);
+        color: white;
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        z-index: 2;
+      }
+
+      .article-content {
+        padding: 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .article-category {
+        color: var(--sage-600);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .article-title {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .article-excerpt {
+        color: var(--dark-40);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        flex: 1;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        border-top: 1px solid var(--warm-white);
+        font-size: 0.85rem;
+        color: var(--dark-40);
+      }
+
+      .article-date {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .article-read-time {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .article-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--sage-600);
+        font-weight: 700;
+        text-decoration: none;
+        transition: var(--transition-base);
+        align-self: flex-start;
+        margin-top: 16px;
+      }
+
+      .article-link:hover {
+        color: var(--sage-800);
+        gap: 12px;
+      }
+
+      .articles-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: 60px;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        border: 2px solid var(--sage-300);
+        background: white;
+        color: var(--sage-600);
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: var(--transition-base);
+        font-family: inherit;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--sage-500);
+        color: white;
+        border-color: var(--sage-500);
+      }
+
+      .articles-section {
+        padding: 80px 0;
+      }
+
+      @media (max-width: 768px) {
+        .articles-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          padding: 60px 0;
+        }
+
+        .articles-hero h1 {
+          font-size: 2rem;
+        }
+
+        .article-title {
+          font-size: 1.2rem;
+        }
+
+        .article-content {
+          padding: 20px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
-      <h1>ليبيا: نبذة عامة</h1>
-      <p class="lead">ليبيا دولة ذات تاريخ طويل وثروة ثقافية وجغرافية مميزة تقع في شمال أفريقيا على ساحل البحر الأبيض المتوسط.</p>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar transparent">
+      <div class="navbar-inner">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">🏛️</div>
+          <span>Citiesly</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html" data-key="home">الرئيسية</a></li>
+          <li><a href="../cities.html" data-key="cities">المدن</a></li>
+          <li><a href="../hotels.html" data-key="hotels">الفنادق</a></li>
+          <li><a href="../landmarks.html" data-key="landmarks">المعالم</a></li>
+          <li><a href="../restaurants.html" data-key="restaurants">المطاعم</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN</button>
+          <button class="mobile-menu-btn">☰</button>
+        </div>
+      </div>
+    </nav>
 
-    <section>
-      <h2>الموقع والجغرافيا</h2>
-      <p>تمتد ليبيا بين مصر من الشرق وتونس والجزائر من الغرب، وتضم مساحات صحراوية شاسعة (الصحراء الليبية) وسواحل مهمة على البحر المتوسط. مناخها متوسطي على السواحل وقاري وجاف داخل البلاد، مع تباين واضح في التضاريس والموارد الطبيعية.</p>
+    <!-- Hero Section -->
+    <div class="articles-hero">
+      <div class="articles-hero-content">
+        <h1>مقالات ودليل ليبيا</h1>
+        <p>استكشف أغنى المحتوى حول ليبيا، ثقافتها، تاريخها، ومعالمها السياحية</p>
+      </div>
+    </div>
+
+    <!-- Main Articles Section -->
+    <section class="articles-section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="articles-filter">
+          <button class="filter-btn active" onclick="filterArticles('all')">
+            <i class="fas fa-list"></i> الكل
+          </button>
+          <button class="filter-btn" onclick="filterArticles('geography')">
+            <i class="fas fa-map"></i> الجغرافيا
+          </button>
+          <button class="filter-btn" onclick="filterArticles('history')">
+            <i class="fas fa-history"></i> التاريخ
+          </button>
+          <button class="filter-btn" onclick="filterArticles('culture')">
+            <i class="fas fa-theater-masks"></i> الثقافة
+          </button>
+          <button class="filter-btn" onclick="filterArticles('tourism')">
+            <i class="fas fa-camera"></i> السياحة
+          </button>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid">
+          <!-- Article 1 -->
+          <div class="article-card" data-category="geography">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #7a9f76 0%, #5a7d56 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-map-location-dot" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">جغرافيا</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-map"></i> الجغرافيا
+              </div>
+              <h3 class="article-title">الموقع والجغرافيا</h3>
+              <p class="article-excerpt">
+                تمتد ليبيا عبر شمال أفريقيا بمساحة تزيد عن مليون كيلومتر مربع، مع سواحل خلابة على البحر الأبيض المتوسط والصحراء الليبية الشاسعة في الداخل.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 4 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-card" data-category="history">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #a68a3a 0%, #c9a84c 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-landmark" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">تاريخ</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-history"></i> التاريخ
+              </div>
+              <h3 class="article-title">تاريخ ليبيا موجز</h3>
+              <p class="article-excerpt">
+                شهدت ليبيا حضارات عريقة: الفينيقيون والرومان والبيزنطيون، تلاها الفتح الإسلامي والعهد العثماني ثم الاستعمار الإيطالي والاستقلال الحديث.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 6 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-card" data-category="culture">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-theater-masks" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">ثقافة</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-theater-masks"></i> الثقافة
+              </div>
+              <h3 class="article-title">الثقافة والمجتمع الليبي</h3>
+              <p class="article-excerpt">
+                تجمع الثقافة الليبية بين التقاليد العربية والأمازيغية والإسلامية، مع تأثيرات متوسطية شمالية وصحراوية فريدة تشكل هويتها المتميزة.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 5 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="article-card" data-category="tourism">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #4ecdc4 0%, #44b7b0 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-camera" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">سياحة</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-camera"></i> السياحة
+              </div>
+              <h3 class="article-title">السياحة والمعالم الأثرية</h3>
+              <p class="article-excerpt">
+                تضم ليبيا مواقع أثرية عالمية مثل لبدة الكبرى وصبراتة وغدامس القديمة، إضافة إلى سواحل رملية خلابة ومناطق صحراوية ساحرة.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 7 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="article-card" data-category="geography">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-water" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">جغرافيا</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-map"></i> الجغرافيا
+              </div>
+              <h3 class="article-title">السواحل والمناخ</h3>
+              <p class="article-excerpt">
+                يمتد ساحل ليبيا على البحر الأبيض المتوسط بطول 1770 كيلومتر، ويتمتع بمناخ متوسطي على الساحل وصحراوي في الداخل.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 3 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="article-card" data-category="culture">
+            <div class="article-img">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-utensils" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              </div>
+              <div class="article-badge">ثقافة</div>
+            </div>
+            <div class="article-content">
+              <div class="article-category">
+                <i class="fas fa-theater-masks"></i> الثقافة
+              </div>
+              <h3 class="article-title">المأكولات الليبية التقليدية</h3>
+              <p class="article-excerpt">
+                تتميز المطبخ الليبي بتنوعه وثرائه، مع أطباق عريقة مثل الكسكسي والشرقوقة والمرق اللذيذة التي تعكس تراثها الغني.
+              </p>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="fas fa-calendar"></i> 2026
+                </span>
+                <span class="article-read-time">
+                  <i class="fas fa-clock"></i> 5 دقائق
+                </span>
+              </div>
+              <a href="#" class="article-link">
+                اقرأ المزيد
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>تاريخ موجز</h2>
-      <p>عرفت ليبيا تاريخًا غنيًا تضمن حضارات قديمة مثل الفينيقيين والرومان والبيزنطيين، ثم الفتح الإسلامي والفترات العثمانية والإيطالية. في القرن العشرين استقلت ليبيا وأصبحت مملكة ثم شهدت تغييرات كبيرة في النظم السياسية والاجتماعية خلال العقود التالية.</p>
-    </section>
-
-    <section>
-      <h2>الثقافة والمجتمع</h2>
-      <p>تجمع الثقافة الليبية بين التقاليد العربية والأمازيغية والإسلامية، مع تأثيرات متوسطة شمالية وصحراوية. الضيافة والعائلة وروابط المجتمع المحلي عناصر مهمة، ويتميز المطبخ الليبي بأطباق مثل الكسكس والبطبوط والمأكولات البحرية على السواحل.</p>
-    </section>
-
-    <section>
-      <h2>الاقتصاد والموارد</h2>
-      <p>تعتمد ليبيا بشكل كبير على النفط والغاز كمصدر رئيسي للإيرادات. هناك جهود متنوعة لتنويع الاقتصاد ودعم الزراعة والسياحة والبنية التحتية، مع تحديات تتعلق بالاستقرار السياسي وإعادة الإعمار.</p>
-    </section>
-
-    <section>
-      <h2>السياحة والمعالم</h2>
-      <p>تضم ليبيا مواقع أثرية هامة مثل لبدة الكبرى وصبراتة ومدينة غدامس القديمة (الواحات)، إضافة إلى سواحل رملية وصحارى خلابة مثل سبها والحمادة. السياحة تتطلب حالة أمنية مستقرة وخدمات بنيية متطورة لتعود تدريجيًا.</p>
-    </section>
-
-    <footer>
-      <p>كتبه: فريق محتوى — Citiesly. تاريخ الإنشاء: 2026</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo" style="color: white;">
+              <div class="logo-icon" style="background: var(--sage-400);">🏛️</div>
+              <span>Citiesly</span>
+            </div>
+            <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.</p>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="quickLinks">روابط سريعة</h4>
+            <ul class="footer-links">
+              <li><a href="../cities.html" data-key="cities">المدن</a></li>
+              <li><a href="../hotels.html" data-key="hotels">الفنادق</a></li>
+              <li><a href="../restaurants.html" data-key="restaurants">المطاعم</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">المقالات</h4>
+            <ul class="footer-links">
+              <li><a href="#">الجغرافيا</a></li>
+              <li><a href="#">التاريخ</a></li>
+              <li><a href="#">الثقافة</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
+            <ul class="footer-contact">
+              <li><i class="fas fa-envelope"></i> info@citiesly.com</li>
+              <li><i class="fas fa-phone"></i> +218 21 3333 333</li>
+              <li><i class="fas fa-map-marker-alt"></i> طرابلس، ليبيا</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><span data-key="rights">جميع الحقوق محفوظة</span> © 2026 Citiesly</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      function filterArticles(category) {
+        const cards = document.querySelectorAll('.article-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        // Update active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Filter cards
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.opacity = '0';
+            card.style.display = '';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.3s ease';
+              card.style.opacity = '1';
+            }, 10);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    </script>
   </body>
 </html>
