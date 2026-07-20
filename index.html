@@ -17,6 +17,12 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* لجعل البطاقات القابلة للنقر تبدو تفاعلية */
+    .card[data-city], .mini-card[data-nav] {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -41,15 +47,15 @@
 
       <div class="nav-actions">
         <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
-        <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu-overlay"></div>
-  <div class="mobile-menu">
-    <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
     <ul class="mobile-menu-links">
       <li><a href="index.html" data-key="home">الرئيسية</a></li>
       <li><a href="cities.html" data-key="cities">المدن</a></li>
@@ -99,7 +105,7 @@
 
       <div class="card-grid card-grid-3">
         <!-- Tripoli -->
-        <div class="card" data-search="طرابلس tripoli" data-city="tripoli">
+        <div class="card" data-search="طرابلس tripoli" data-city="tripoli" data-href="tripoli.html">
           <div class="card-img">
             <img src="images/tripoli.jpg" alt="Tripoli, Libya">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
@@ -115,7 +121,7 @@
         </div>
 
         <!-- Benghazi -->
-        <div class="card" data-search="بنغازي benghazi" data-city="benghazi">
+        <div class="card" data-search="بنغازي benghazi" data-city="benghazi" data-href="benghazi.html">
           <div class="card-img">
             <img src="images/benghazi.jpg" alt="Benghazi, Libya">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
@@ -131,7 +137,7 @@
         </div>
 
         <!-- Ghadames -->
-        <div class="card" data-search="غدامس ghadames" data-city="ghadames">
+        <div class="card" data-search="غدامس ghadames" data-city="ghadames" data-href="ghadames.html">
           <div class="card-img">
             <img src="images/ghadames.jpg" alt="Ghadames, Libya">
             <span class="card-badge gold">UNESCO</span>
@@ -147,7 +153,7 @@
         </div>
 
         <!-- Sabha -->
-        <div class="card" data-search="سبها sabha" data-city="sabha">
+        <div class="card" data-search="سبها sabha" data-city="sabha" data-href="sabha.html">
           <div class="card-img">
             <img src="images/sabha.jpg" alt="Sabha, Libya">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
@@ -163,7 +169,7 @@
         </div>
 
         <!-- Bayda -->
-        <div class="card" data-search="البيضاء bayda" data-city="bayda">
+        <div class="card" data-search="البيضاء bayda" data-city="bayda" data-href="bayda.html">
           <div class="card-img">
             <img src="images/bayda.jpg" alt="Bayda, Libya">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
@@ -179,7 +185,7 @@
         </div>
 
         <!-- Misrata -->
-        <div class="card" data-search="مصراتة misrata" data-city="misrata">
+        <div class="card" data-search="مصراتة misrata" data-city="misrata" data-href="misrata.html">
           <div class="card-img">
             <img src="images/misrata.jpg" alt="Misrata, Libya">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
@@ -225,7 +231,7 @@
   <section class="mini-section">
     <div class="container">
       <!-- Hotels Mini Section -->
-      <div class="mini-card" style="margin-bottom: 32px;">
+      <div class="mini-card" data-nav data-href="hotels.html" style="margin-bottom: 32px;">
         <div class="mini-card-img">
           <img src="images/hotel-luxury.jpg" alt="Luxury Hotel in Libya">
         </div>
@@ -237,7 +243,7 @@
       </div>
 
       <!-- Landmarks Mini Section -->
-      <div class="mini-card" style="margin-bottom: 32px;">
+      <div class="mini-card" data-nav data-href="landmarks.html" style="margin-bottom: 32px;">
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="landmarksSection">أبرز المعالم السياحية</h3>
           <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل ليبيا وجهة فريدة</p>
@@ -249,7 +255,7 @@
       </div>
 
       <!-- Restaurants Mini Section -->
-      <div class="mini-card">
+      <div class="mini-card" data-nav data-href="restaurants.html">
         <div class="mini-card-img">
           <img src="images/libyan-food.jpg" alt="Libyan Cuisine">
         </div>
@@ -403,5 +409,45 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script>
+    // ===== تفعيل القائمة المنسدلة (قائمة الجوال) =====
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      function openMenu() {
+        mobileMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (menuBtn) menuBtn.addEventListener('click', openMenu);
+      if (menuClose) menuClose.addEventListener('click', closeMenu);
+      if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+      // إغلاق القائمة عند الضغط على أي رابط داخلها
+      document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // ===== توجيه البطاقات حسب القسم المذكور فيها =====
+      document.querySelectorAll('.card[data-href], .mini-card[data-href]').forEach(card => {
+        card.addEventListener('click', function (e) {
+          // تجاهل النقر إذا كان على رابط داخلي (لتفادي التوجيه المزدوج)
+          if (e.target.closest('a')) return;
+          const href = card.getAttribute('data-href');
+          if (href) window.location.href = href;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
