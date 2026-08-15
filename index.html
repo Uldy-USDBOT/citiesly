@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cities.ly - دليل السياحة في ليبيا | Libya Tourism Guide</title>
-  <meta name="description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس و[...]
+  <meta name="description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس و[[...]">
   <meta name="keywords" content="ليبيا, سياحة, طرابلس, بنغازي, غدامس, لبدة, صبراتة, فنادق, معالم, مطاعم">
   <meta property="og:title" content="cities.ly - دليل السياحة في ليبيا">
   <meta property="og:description" content="اكتشف أجمل مدن ليبيا السياحية">
@@ -22,6 +22,9 @@
     .card[data-city], .mini-card[data-nav] {
       cursor: pointer;
     }
+    /* Donation/Support quick styles */
+    .support-iban { background:#f7fbff; border:1px solid #e1f0ff; padding:10px; border-radius:6px; margin:10px 0; direction:ltr; }
+    .support-iban p { margin:4px 0; font-weight:600; }
   </style>
 </head>
 <body>
@@ -144,7 +147,7 @@
           </div>
           <div class="card-body">
             <h3 class="card-title">غدامس</h3>
-            <p class="card-text">لؤلؤة الصحراء، مدينة الواحات القديمة المسجلة في اليونسكو، تُعرف بعمارتها التقليدية الف[...]
+            <p class="card-text">لؤلؤة الصحراء، مدينة الواحات القديمة المسجلة في اليونسكو، تُعرف بعمارتها التقليدية الف[[...]
             <div class="card-meta">
               <span class="tag"><i class="fas fa-map-marker-alt"></i> الجنوب الغربي</span>
               <a href="ghadames.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
@@ -237,7 +240,7 @@
         </div>
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="hotelsSection">أفضل الفنادق</h3>
-          <p class="mini-card-text" data-key="hotelsDesc">اختر من مجموعة مختارة من أفضل الفنادق في ليبيا، من الفخامة الفندقية العالم[...]
+          <p class="mini-card-text" data-key="hotelsDesc">اختر من مجموعة مختارة من أفضل الفنادق في ليبيا، من الفخامة الفندقية العالم[[...]
           <a href="hotels.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
@@ -246,7 +249,7 @@
       <div class="mini-card" data-nav data-href="landmarks.html" style="margin-bottom: 32px;">
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="landmarksSection">أبرز المعالم السياحية</h3>
-          <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل [...]
+          <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل [[...]
           <a href="landmarks.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="mini-card-img">
@@ -261,7 +264,7 @@
         </div>
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="restaurantsSection">أشهر المطاعم</h3>
-          <p class="mini-card-text" data-key="restaurantsDesc">تذوق ألذ الأطباق الليبية والعالمية في أرقى المطاعم على مستوى المدن اللي[...]
+          <p class="mini-card-text" data-key="restaurantsDesc">تذوق ألذ الأطباق الليبية والعالمية في أرقى المطاعم على مستوى المدن اللي[[...]
           <a href="restaurants.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
@@ -364,6 +367,24 @@
       </div>
 
       <div class="support-grid">
+        <!-- Donation Card -->
+        <div class="support-card">
+          <div class="support-icon">
+            <i class="fas fa-donate"></i>
+          </div>
+          <h3 class="support-card-title">دعم الموقع</h3>
+          <p class="support-card-desc">ساهموا في استمرار المنصة عبر التحويل البنكي إلى حسابنا.</p>
+          <div class="support-iban">
+            <p><strong>IBAN:</strong> <span dir="ltr">LY64 0020 3703 7201 0001 1104 4</span></p>
+            <p><strong>البنك:</strong> مصرف الجمهورية</p>
+            <p><strong>صاحب الحساب:</strong> مهندس / ناجي علي التير</p>
+          </div>
+          <a href="support.html" class="support-link">
+            <span>التفاصيل الكاملة</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
         <!-- FAQ Card -->
         <div class="support-card">
           <div class="support-icon">
@@ -455,7 +476,7 @@
             <div class="logo-icon"><i class="fas fa-compass"></i></div>
             <span>cities.ly</span>
           </a>
-          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.[...]
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.[..[...]
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
