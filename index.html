@@ -4,16 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cities.ly - دليل السياحة في ليبيا | Libya Tourism Guide</title>
-  <meta name="description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس و[...]
+
+  <!-- تم إكمال الوصف والكلمات المفتاحية (كانت مقصوصة في النسخة الأصلية) -->
+  <meta name="description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس وبنغازي وغدامس ولبدة وصبراتة وغيرها من المدن الليبية.">
   <meta name="keywords" content="ليبيا, سياحة, طرابلس, بنغازي, غدامس, لبدة, صبراتة, فنادق, معالم, مطاعم">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://cities.ly/">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="cities.ly - دليل السياحة في ليبيا">
-  <meta property="og:description" content="اكتشف أجمل مدن ليبيا السياحية">
+  <meta property="og:description" content="اكتشف أجمل مدن ليبيا السياحية. دليل شامل للفنادق والمعالم والمطاعم والمتاحف في طرابلس وبنغازي وغدامس.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cities.ly">
-<meta name="google-adsense-account" content="ca-pub-9849369175051203">
+  <meta property="og:url" content="https://cities.ly/">
+  <meta property="og:image" content="https://cities.ly/images/hero-leptis.jpg">
+  <meta property="og:locale" content="ar_LY">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="cities.ly - دليل السياحة في ليبيا">
+  <meta name="twitter:description" content="اكتشف أجمل مدن ليبيا السياحية">
+  <meta name="twitter:image" content="https://cities.ly/images/hero-leptis.jpg">
+
+  <meta name="google-adsense-account" content="ca-pub-9849369175051203">
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
@@ -34,21 +52,15 @@
         <span>cities.ly</span>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="index.html" data-key="home">الرئيسية</a></li>
-        <li><a href="cities.html" data-key="cities">المدن</a></li>
-        <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
-        <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
-        <li><a href="museums.html" data-key="museums">المتاحف</a></li>
-        <li><a href="transport.html" data-key="transport">النقل</a></li>
-        <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
-        <li><a href="articles/libya.html" data-key="articles">مقالات</a></li>
-        <li><a href="support.html" data-key="support">دعم الموقع</a></li>
-      </ul>
+      <!-- تم إبقاء القائمتين (الرئيسية والجوال) في HTML للتوافق مع style.css،
+           لكن روابطهما الآن تُبنى من مصدر واحد عبر JavaScript بدل تكرار الكتابة يدويًا مرتين -->
+      <ul class="nav-links" id="navLinks"></ul>
 
       <div class="nav-actions">
         <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" data-key="langSwitch">EN</button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -56,18 +68,8 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
-    <ul class="mobile-menu-links">
-      <li><a href="index.html" data-key="home">الرئيسية</a></li>
-      <li><a href="cities.html" data-key="cities">المدن</a></li>
-      <li><a href="hotels.html" data-key="hotels">الفنادق</a></li>
-      <li><a href="landmarks.html" data-key="landmarks">المعالم</a></li>
-      <li><a href="museums.html" data-key="museums">المتاحف</a></li>
-      <li><a href="transport.html" data-key="transport">النقل</a></li>
-      <li><a href="restaurants.html" data-key="restaurants">المطاعم</a></li>
-      <li><a href="articles/libya.html" data-key="articles">مقالات</a></li>
-      <li><a href="support.html" data-key="support">دعم الموقع</a></li>
-    </ul>
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="إغلاق القائمة"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links" id="mobileMenuLinks"></ul>
   </div>
 
   <!-- Hero Section -->
@@ -82,13 +84,13 @@
         <span data-key="heroBadge">دليل السياحة الليبي</span>
       </div>
       <h1 class="hero-title" data-key="heroTitle">اكتشف أجمل مدن ليبيا</h1>
-      <p class="hero-subtitle" data-key="heroSubtitle">دليلك الشامل لأبرز المدن والمعالم والفنادق والمطاعم في ليبيا. رحلة لا تُنسى ع[...]
+      <p class="hero-subtitle" data-key="heroSubtitle">دليلك الشامل لأبرز المدن والمعالم والفنادق والمطاعم في ليبيا. رحلة لا تُنسى عبر تاريخ عريق وطبيعة خلابة.</p>
       <a href="cities.html" class="hero-cta">
         <span data-key="heroCta">استكشف الآن</span>
         <i class="fas fa-arrow-left"></i>
       </a>
     </div>
-    <a href="#cities" class="hero-scroll">
+    <a href="#cities" class="hero-scroll" aria-label="انتقل إلى قسم المدن">
       <i class="fas fa-chevron-down fa-2x"></i>
     </a>
   </section>
@@ -107,14 +109,14 @@
 
       <div class="card-grid card-grid-3">
         <!-- Tripoli -->
-        <div class="card" data-search="طرابلس tripoli" data-city="tripoli" data-href="tripoli.html">
+        <div class="card" data-search="طرابلس tripoli" data-city="tripoli" data-href="tripoli.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/tripoli.jpg" alt="Tripoli, Libya">
+            <img src="images/tripoli.jpg" alt="Tripoli, Libya" loading="lazy">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
           </div>
           <div class="card-body">
             <h3 class="card-title">طرابلس</h3>
-            <p class="card-text">عاصمة ليبيا وأكبر مدنها، تجمع بين التاريخ العريق والحضارة الحديثة. تضم المدينة القديمة و[...]
+            <p class="card-text">عاصمة ليبيا وأكبر مدنها، تجمع بين التاريخ العريق والحضارة الحديثة. تضم المدينة القديمة وقلعة طرابلس ومعالم أثرية وأسواقًا تقليدية نابضة بالحياة.</p>
             <div class="card-meta">
               <span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الغربي</span>
               <a href="tripoli.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
@@ -123,9 +125,9 @@
         </div>
 
         <!-- Benghazi -->
-        <div class="card" data-search="بنغازي benghazi" data-city="benghazi" data-href="benghazi.html">
+        <div class="card" data-search="بنغازي benghazi" data-city="benghazi" data-href="benghazi.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/benghazi.jpg" alt="Benghazi, Libya">
+            <img src="images/benghazi.jpg" alt="Benghazi, Libya" loading="lazy">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
           </div>
           <div class="card-body">
@@ -139,14 +141,14 @@
         </div>
 
         <!-- Ghadames -->
-        <div class="card" data-search="غدامس ghadames" data-city="ghadames" data-href="ghadames.html">
+        <div class="card" data-search="غدامس ghadames" data-city="ghadames" data-href="ghadames.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/ghadames.jpg" alt="Ghadames, Libya">
+            <img src="images/ghadames.jpg" alt="Ghadames, Libya" loading="lazy">
             <span class="card-badge gold">UNESCO</span>
           </div>
           <div class="card-body">
             <h3 class="card-title">غدامس</h3>
-            <p class="card-text">لؤلؤة الصحراء، مدينة الواحات القديمة المسجلة في اليونسكو، تُعرف بعمارتها التقليدية الف[...]
+            <p class="card-text">لؤلؤة الصحراء، مدينة الواحات القديمة المسجلة في اليونسكو، تُعرف بعمارتها التقليدية الفريدة وبيوتها الطينية المزخرفة.</p>
             <div class="card-meta">
               <span class="tag"><i class="fas fa-map-marker-alt"></i> الجنوب الغربي</span>
               <a href="ghadames.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
@@ -155,9 +157,9 @@
         </div>
 
         <!-- Sabha -->
-        <div class="card" data-search="سبها sabha" data-city="sabha" data-href="sabha.html">
+        <div class="card" data-search="سبها sabha" data-city="sabha" data-href="sabha.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/sabha.jpg" alt="Sabha, Libya">
+            <img src="images/sabha.jpg" alt="Sabha, Libya" loading="lazy">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
           </div>
           <div class="card-body">
@@ -171,9 +173,9 @@
         </div>
 
         <!-- Bayda -->
-        <div class="card" data-search="البيضاء bayda" data-city="bayda" data-href="bayda.html">
+        <div class="card" data-search="البيضاء bayda" data-city="bayda" data-href="bayda.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/bayda.jpg" alt="Bayda, Libya">
+            <img src="images/bayda.jpg" alt="Bayda, Libya" loading="lazy">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
           </div>
           <div class="card-body">
@@ -187,14 +189,14 @@
         </div>
 
         <!-- Misrata -->
-        <div class="card" data-search="مصراتة misrata" data-city="misrata" data-href="misrata.html">
+        <div class="card" data-search="مصراتة misrata" data-city="misrata" data-href="misrata.html" role="link" tabindex="0">
           <div class="card-img">
-            <img src="images/misrata.jpg" alt="Misrata, Libya">
+            <img src="images/misrata.jpg" alt="Misrata, Libya" loading="lazy">
             <span class="card-badge" data-key="readMore">اقرأ المزيد</span>
           </div>
           <div class="card-body">
             <h3 class="card-title">مصراتة</h3>
-            <p class="card-text">إحدى أهم المدن الليبية، مركز تجاري حيوي على الساحل الغربي بشواطئها الجميلة ونمط حياة عصر[...]
+            <p class="card-text">إحدى أهم المدن الليبية، مركز تجاري حيوي على الساحل الغربي بشواطئها الجميلة ونمط حياة عصري.</p>
             <div class="card-meta">
               <span class="tag"><i class="fas fa-map-marker-alt"></i> الساحل الغربي</span>
               <a href="misrata.html" class="card-link"><span data-key="readMore">اقرأ المزيد</span> <i class="fas fa-arrow-left"></i></a>
@@ -233,37 +235,37 @@
   <section class="mini-section">
     <div class="container">
       <!-- Hotels Mini Section -->
-      <div class="mini-card" data-nav data-href="hotels.html" style="margin-bottom: 32px;">
+      <div class="mini-card" data-nav data-href="hotels.html" role="link" tabindex="0" style="margin-bottom: 32px;">
         <div class="mini-card-img">
-          <img src="images/hotel-luxury.jpg" alt="Luxury Hotel in Libya">
+          <img src="images/hotel-luxury.jpg" alt="Luxury Hotel in Libya" loading="lazy">
         </div>
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="hotelsSection">أفضل الفنادق</h3>
-          <p class="mini-card-text" data-key="hotelsDesc">اختر من مجموعة مختارة من أفضل الفنادق في ليبيا، من الفخامة الفندقية العالم[...]
+          <p class="mini-card-text" data-key="hotelsDesc">اختر من مجموعة مختارة من أفضل الفنادق في ليبيا، من الفخامة الفندقية العالمية إلى الضيافة التقليدية الأصيلة.</p>
           <a href="hotels.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
 
       <!-- Landmarks Mini Section -->
-      <div class="mini-card" data-nav data-href="landmarks.html" style="margin-bottom: 32px;">
+      <div class="mini-card" data-nav data-href="landmarks.html" role="link" tabindex="0" style="margin-bottom: 32px;">
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="landmarksSection">أبرز المعالم السياحية</h3>
-          <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل [...]
+          <p class="mini-card-text" data-key="landmarksDesc">استكشف الآثار الرومانية واليونانية والمواقع الطبيعية الخلابة التي تجعل ليبيا وجهة فريدة للزوار.</p>
           <a href="landmarks.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="mini-card-img">
-          <img src="images/sabratha.jpg" alt="Sabratha Roman Theatre">
+          <img src="images/sabratha.jpg" alt="Sabratha Roman Theatre" loading="lazy">
         </div>
       </div>
 
       <!-- Restaurants Mini Section -->
-      <div class="mini-card" data-nav data-href="restaurants.html">
+      <div class="mini-card" data-nav data-href="restaurants.html" role="link" tabindex="0">
         <div class="mini-card-img">
-          <img src="images/libyan-food.jpg" alt="Libyan Cuisine">
+          <img src="images/libyan-food.jpg" alt="Libyan Cuisine" loading="lazy">
         </div>
         <div class="mini-card-body">
           <h3 class="mini-card-title" data-key="restaurantsSection">أشهر المطاعم</h3>
-          <p class="mini-card-text" data-key="restaurantsDesc">تذوق ألذ الأطباق الليبية والعالمية في أرقى المطاعم على مستوى المدن اللي[...]
+          <p class="mini-card-text" data-key="restaurantsDesc">تذوق ألذ الأطباق الليبية والعالمية في أرقى المطاعم على مستوى المدن الليبية.</p>
           <a href="restaurants.html" class="card-link"><span data-key="viewAll">عرض الكل</span> <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
@@ -283,72 +285,7 @@
       </div>
 
       <div class="scroll-section">
-        <div class="scroll-track">
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/hero-leptis.jpg" alt="Leptis Magna">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">لبدة الكبرى</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/ghadames-old.jpg" alt="Old Ghadames">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">غدامس القديمة</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/coastline.jpg" alt="Mediterranean Coast">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">شواطئ المتوسط</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/akakus.jpg" alt="Akakus Mountains">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">جبال أكاكوس</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/tripoli-old.jpg" alt="Tripoli Old City">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">مدينة طرابلس القديمة</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/derna.jpg" alt="Derna">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">درنة</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/zuwara.jpg" alt="Zuwara">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">زوارة</span>
-            </div>
-          </div>
-          <div class="scroll-card">
-            <div class="scroll-card-img">
-              <img src="images/nalut.jpg" alt="Nalut">
-            </div>
-            <div class="scroll-card-body">
-              <span class="scroll-card-title">نالوت</span>
-            </div>
-          </div>
-        </div>
+        <div class="scroll-track" id="scrollTrack"></div>
       </div>
     </div>
   </section>
@@ -372,7 +309,7 @@
             <div class="logo-icon"><i class="fas fa-compass"></i></div>
             <span>cities.ly</span>
           </a>
-          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.[...]
+          <p data-key="aboutText">دليلك الشامل للسياحة في ليبيا. نساعدك في اكتشاف أجمل المدن والمعالم والفنادق والمطاعم.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -406,8 +343,8 @@
         <div>
           <h4 class="footer-title" data-key="contactUs">اتصل بنا</h4>
           <ul class="footer-links footer-contact">
-            <li><i class="fas fa-envelope"></i> info@cities.ly</li>
-            <li><i class="fas fa-phone"></i> +218 917021437</li>
+            <li><a href="mailto:info@cities.ly"><i class="fas fa-envelope"></i> info@cities.ly</a></li>
+            <li><a href="tel:+218917021437"><i class="fas fa-phone"></i> +218 917021437</a></li>
             <li><i class="fas fa-map-marker-alt"></i> طرابلس، ليبيا</li>
           </ul>
         </div>
@@ -423,8 +360,59 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
-    // ===== تفعيل القائمة المنسدلة (قائمة الجوال) =====
+    // ===== مصدر واحد لروابط التنقل، تُستخدم لبناء القائمتين (الرئيسية والجوال) =====
+    // هذا يستبدل النسخ اليدوي المكرر لنفس القائمة مرتين في HTML
+    const NAV_ITEMS = [
+      { href: 'index.html', key: 'home', label: 'الرئيسية' },
+      { href: 'cities.html', key: 'cities', label: 'المدن' },
+      { href: 'hotels.html', key: 'hotels', label: 'الفنادق' },
+      { href: 'landmarks.html', key: 'landmarks', label: 'المعالم' },
+      { href: 'museums.html', key: 'museums', label: 'المتاحف' },
+      { href: 'transport.html', key: 'transport', label: 'النقل' },
+      { href: 'restaurants.html', key: 'restaurants', label: 'المطاعم' },
+      { href: 'articles/libya.html', key: 'articles', label: 'مقالات' },
+      { href: 'support.html', key: 'support', label: 'دعم الموقع' }
+    ];
+
+    function renderNavList(ulEl) {
+      if (!ulEl) return;
+      ulEl.innerHTML = NAV_ITEMS.map(item =>
+        `<li><a href="${item.href}" data-key="${item.key}">${item.label}</a></li>`
+      ).join('');
+    }
+
+    // ===== صور إلهام الوجهات: مصدر واحد بدل تكرار بنية البطاقة 8 مرات =====
+    const SCROLL_ITEMS = [
+      { img: 'images/hero-leptis.jpg', alt: 'Leptis Magna', title: 'لبدة الكبرى' },
+      { img: 'images/ghadames-old.jpg', alt: 'Old Ghadames', title: 'غدامس القديمة' },
+      { img: 'images/coastline.jpg', alt: 'Mediterranean Coast', title: 'شواطئ المتوسط' },
+      { img: 'images/akakus.jpg', alt: 'Akakus Mountains', title: 'جبال أكاكوس' },
+      { img: 'images/tripoli-old.jpg', alt: 'Tripoli Old City', title: 'مدينة طرابلس القديمة' },
+      { img: 'images/derna.jpg', alt: 'Derna', title: 'درنة' },
+      { img: 'images/zuwara.jpg', alt: 'Zuwara', title: 'زوارة' },
+      { img: 'images/nalut.jpg', alt: 'Nalut', title: 'نالوت' }
+    ];
+
+    function renderScrollTrack(trackEl) {
+      if (!trackEl) return;
+      trackEl.innerHTML = SCROLL_ITEMS.map(item => `
+        <div class="scroll-card">
+          <div class="scroll-card-img">
+            <img src="${item.img}" alt="${item.alt}" loading="lazy">
+          </div>
+          <div class="scroll-card-body">
+            <span class="scroll-card-title">${item.title}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+      // بناء القوائم من المصدر الموحّد
+      renderNavList(document.getElementById('navLinks'));
+      renderNavList(document.getElementById('mobileMenuLinks'));
+      renderScrollTrack(document.getElementById('scrollTrack'));
+
       const menuBtn = document.getElementById('mobileMenuBtn');
       const menuClose = document.getElementById('mobileMenuClose');
       const menuOverlay = document.getElementById('mobileMenuOverlay');
@@ -433,12 +421,14 @@
       function openMenu() {
         mobileMenu.classList.add('active');
         menuOverlay.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
       }
 
       function closeMenu() {
         mobileMenu.classList.remove('active');
         menuOverlay.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
 
@@ -446,18 +436,28 @@
       if (menuClose) menuClose.addEventListener('click', closeMenu);
       if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
 
-      // إغلاق القائمة عند الضغط على أي رابط داخلها
+      // إغلاق القائمة عند الضغط على أي رابط داخلها أو زر Escape
       document.querySelectorAll('.mobile-menu-links a').forEach(link => {
         link.addEventListener('click', closeMenu);
       });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
+      });
 
-      // ===== توجيه البطاقات حسب القسم المذكور فيها =====
+      // ===== توجيه البطاقات القابلة للنقر + دعم لوحة المفاتيح (Enter / Space) =====
       document.querySelectorAll('.card[data-href], .mini-card[data-href]').forEach(card => {
         card.addEventListener('click', function (e) {
-          // تجاهل النقر إذا كان على رابط داخلي (لتفادي التوجيه المزدوج)
-          if (e.target.closest('a')) return;
+          if (e.target.closest('a')) return; // تجاهل النقر على رابط داخلي لتفادي التوجيه المزدوج
           const href = card.getAttribute('data-href');
           if (href) window.location.href = href;
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+            const href = card.getAttribute('data-href');
+            if (href) window.location.href = href;
+          }
         });
       });
     });
